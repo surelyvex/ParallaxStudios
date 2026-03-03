@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<title>George kewly is big</title>
+<title>PAPER FLIGHT SYS</title>
 <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--st:env(safe-area-inset-top,0px);--sb:env(safe-area-inset-bottom,0px);}
@@ -788,7 +788,9 @@ document.getElementById('reset-btn').addEventListener('click',resetGame);
 let hasAvail=false;
 let hangarTick=0;
 function renderAll(){
-  countEl.textContent=fmt(Math.floor(G.planes));
+  const planeFloor=Math.floor(G.planes);
+  countEl.textContent=fmt(planeFloor);
+  document.title=fmt(planeFloor)+' planes — PAPER FLIGHT SYS';
   const now=Date.now();
   const evtM=(G.activeEvent&&now<G.activeEvent.endTime)?G.activeEvent.mult:1;
   const dispPPS=G.pps*(G.activeEvent?.isPPS?evtM:1);
